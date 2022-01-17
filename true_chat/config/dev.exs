@@ -25,7 +25,15 @@ config :true_chat, TrueChatWeb.Endpoint,
   secret_key_base: "RTzBc7cbewixH4NWhOQIPERtq8JXwtJPY+19m1D70cDRQUKGNVlKUY6oHQp91XYH",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    npx: [
+      "tailwindcss",
+      "--input=css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--postcss",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ]
   ]
 
 # ## SSL Support
