@@ -20,7 +20,12 @@ defmodule TrueChatWeb.Router do
   scope "/", TrueChatWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live_session :chat,
+      on_mount: TrueChatWeb.Live.Auth do
+      live "/rooms/join/:invite_code", Live.JoinRoomView
+
+      live "/", Live.IndexView
+    end
   end
 
   # Other scopes may use custom stacks.
@@ -40,7 +45,6 @@ defmodule TrueChatWeb.Router do
 
     scope "/" do
       pipe_through :browser
-
       live_dashboard "/dashboard", metrics: TrueChatWeb.Telemetry
     end
   end
