@@ -5,7 +5,7 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     TrueChat.Repo.insert!(%TrueChat.SomeSchema{})
+#     HonestChat.Repo.insert!(%HonestChat.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.

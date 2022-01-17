@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :true_chat, TrueChat.Repo,
+config :honest_chat, HonestChat.Repo,
   username: "postgres",
   password: "postgres",
+  database: "honest_chat_dev",
   hostname: "localhost",
-  database: "true_chat_dev",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -15,14 +15,14 @@ config :true_chat, TrueChat.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :true_chat, TrueChatWeb.Endpoint,
+config :honest_chat, HonestChatWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "RTzBc7cbewixH4NWhOQIPERtq8JXwtJPY+19m1D70cDRQUKGNVlKUY6oHQp91XYH",
+  secret_key_base: "PPuAq4zKNNIHyiBn3NrIUPmx9e3hrfRAx2Ch02m7Pxzer+RPlzc+h3Ozxpbl/FWa",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
@@ -61,13 +61,13 @@ config :true_chat, TrueChatWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :true_chat, TrueChatWeb.Endpoint,
+config :honest_chat, HonestChatWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/true_chat_web/(live|views)/.*(ex)$",
-      ~r"lib/true_chat_web/templates/.*(eex)$"
+      ~r"lib/honest_chat_web/(live|views)/.*(ex)$",
+      ~r"lib/honest_chat_web/templates/.*(eex)$"
     ]
   ]
 

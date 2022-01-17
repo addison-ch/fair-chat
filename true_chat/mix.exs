@@ -1,11 +1,11 @@
-defmodule TrueChat.MixProject do
+defmodule HonestChat.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :true_chat,
+      app: :honest_chat,
       version: "0.1.0",
-      elixir: "~> 1.12",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -19,7 +19,7 @@ defmodule TrueChat.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {TrueChat.Application, []},
+      mod: {HonestChat.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -31,7 +31,7 @@ defmodule TrueChat.MixProject do
   # Specifies your project dependencies.
   #
   # Type `mix help deps` for examples and options.
-   defp deps do
+  defp deps do
     [
       {:pbkdf2_elixir, "~> 1.0"},
       {:phoenix, "~> 1.6.2"},

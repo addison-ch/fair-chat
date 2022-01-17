@@ -1,7 +1,7 @@
-defmodule TrueChat.AccountsFixtures do
+defmodule HonestChat.AccountsFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `TrueChat.Accounts` context.
+  entities via the `HonestChat.Accounts` context.
   """
 
   def unique_user_email, do: "user#{System.unique_integer()}@example.com"
@@ -18,7 +18,7 @@ defmodule TrueChat.AccountsFixtures do
     {:ok, user} =
       attrs
       |> valid_user_attributes()
-      |> TrueChat.Accounts.register_user()
+      |> HonestChat.Accounts.register_user()
 
     user
   end
